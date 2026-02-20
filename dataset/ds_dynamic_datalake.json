@@ -1,0 +1,38 @@
+{
+	"name": "ds_dynamic_datalake",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "datalakestorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_datalake_directory": {
+				"type": "String"
+			},
+			"p_datalake_filename": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().p_datalake_filename",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().p_datalake_directory",
+					"type": "Expression"
+				},
+				"fileSystem": "bronze"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
