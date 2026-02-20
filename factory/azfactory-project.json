@@ -1,0 +1,9 @@
+{
+	"name": "azfactory-project",
+	"location": "francecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4027454a-2ca8-4ba8-9db9-b4470d95691c",
+		"tenantId": "ad9f332d-242d-4f0a-b5db-9c285798e7d7"
+	}
+}
